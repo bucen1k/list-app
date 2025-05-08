@@ -1,12 +1,15 @@
-let appState = {
-    selectedItems: [],
-    customOrder: null
-  };
-  
-  module.exports = {
-    getState: () => ({ ...appState }),
-    updateState: (newState) => {
-      appState = { ...appState, ...newState };
-      return appState;
-    }
-  };
+let state = {
+  selectedItems: [],
+  customOrder: null,
+  inputData: {} 
+};
+
+function getState() {
+  return state;
+}
+
+function updateState(newState) {
+  state = { ...state, ...newState };
+}
+
+module.exports = { getState, updateState };
